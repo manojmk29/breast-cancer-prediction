@@ -72,7 +72,7 @@ pyrsistent==0.17.3
 pyspark==3.0.1
 python-dateutil==2.8.1
 pytz==2020.5
-pywin32==227
+pywin32
 pywinpty==0.5.7
 pyzmq==21.0.2
 qtconsole==5.0.2
