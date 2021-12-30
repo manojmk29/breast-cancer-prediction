@@ -4,173 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Discount</title>
     <title>Document</title>
 </head>
 
 <body>
+<div class="login">
+	<h1>Get Products with discount</h1>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="link" placeholder="Enter the product link" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Go to Amazon</button>
+    </form>
+   <br>
+   <br>
+   {{ prediction_text }}
+ </div>
 
-    <div style="color:black">
-        <form action="{{ url_for('predict')}}" method="post">
-            <h2>BREAST CANCER PRDICTION</h2>
-            <h2>_______________________</h2>
-            <h2>YOUR RESULT IS</h2>
-            <h2>_______________________</h2>
-            <h3> {{ prediction_text }}
-                <h3>
-                    <h2>_______________________</h2>
-                    <h3>radius_mean</h3><br><input id="second" name="radius_mean" required="required">
-                    <h3>texture_mean</h3><input id="third" name="texture_mean" required="required">
-                    <h3>perimeter_mean</h3><br><input id="fourth" name="perimeter_mean" required="required">
-                    <h3>area_mean</h3><br><input id="second" name="area_mean" required="required">
-                    <h3>smoothness_mean</h3><input id="third" name="smoothness_mean" required="required">
-                    <h3>compactness_mean</h3><br><input id="fourth" name="compactness_mean" required="required">
-                    <h3>concavity_mean</h3><br><input id="second" name="concavity_mean" required="required">
-                    <h3>concave_points_mean</h3><input id="third" name="concave_points_mean" required="required">
-                    <h3>symmetry_mean</h3><br><input id="fourth" name="symmetry_mean" required="required">
-                    <h3>fractal_dimension_mean</h3><br><input id="second" name="fractal_dimension_mean" required="required">
-                    <h3>radius_se</h3><input id="third" name="radius_se" required="required">
-                    <h3>texture_se</h3><br><input id="fourth" name="texture_se" required="required">
-                    <h3>perimeter_se</h3><br><input id="second" name="perimeter_se" required="required">
-                    <h3>area_se</h3><input id="third" name="area_se" required="required">
-                    <h3>smoothness_se</h3><br><input id="fourth" name="smoothness_se" required="required">
-                    <h3>compactness_se</h3><br><input id="second" name="compactness_se" required="required">
-                    <h3>concavity_se</h3><input id="third" name="concavity_se" required="required">
-                    <h3>concave_points_se</h3><br><input id="fourth" name="concave_points_se" required="required">
-                    <h3>symmetry_se</h3><br><input id="second" name="symmetry_se" required="required">
-                    <h3>fractal_dimension_se</h3><input id="third" name="fractal_dimension_se" required="required">
-                    <h3>radius_worst</h3><br><input id="fourth" name="radius_worst" required="required">
-                    <h3>texture_worst</h3><br><input id="second" name="texture_worst" required="required">
-                    <h3>perimeter_worst</h3><input id="third" name="perimeter_worst" required="required">
-                    <h3>area_worst</h3><br><input id="fourth" name="area_worst" required="required">
-                    <h3>smoothness_worst</h3><br><input id="second" name="smoothness_worst" required="required">
-                    <h3>compactness_worst</h3><input id="third" name="compactness_worst" required="required">
-                    <h3>concavity_worst</h3><br><input id="fourth" name="concavity_worst" required="required">
-                    <h3>concave_points_worst</h3><br><input id="second" name="concave_points_worst" required="required">
-                    <h3>symmetry_worst</h3><br><input id="second" name="symmetry_worst" required="required">
-                    <h3>fractal_dimension_worst</h3><br><input id="second" name="fractal_dimension_worst" required="required">
-
-                    <br><br><button id="sub" type="submit ">KNOW THE RESULT</button>
-                    <br>
-
-
-
-
-        </form>
-
-
-
-
-    </div>
-
-
-    <style>
-        body {
-            background-color: white;
-            text-align: center;
-            padding: 0px;
-        }
-        
-        #research {
-            font-size: 18px;
-            width: 100px;
-            height: 23px;
-            top: 23px;
-        }
-        
-        #box {
-            border-radius: 60px;
-            border-color: 45px;
-            border-style: solid;
-            font-family: cursive;
-            text-align: center;
-            background-color: orangered;
-            font-size: medium;
-            position: absolute;
-            width: 700px;
-            bottom: 9%;
-            height: 850px;
-            right: 30%;
-            padding: 0px;
-            margin: 0px;
-            font-size: 14px;
-        }
-        
-        #fuel {
-            width: 83px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 20px;
-        }
-        
-        #fuel:hover {
-            background-color: coral;
-        }
-        
-        #research {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #research:hover {
-            background-color: coral;
-        }
-        
-        #resea {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #resea:hover {
-            background-color: coral;
-        }
-        
-        #sub {
-            width: 120px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #sub:hover {
-            background-color: darkcyan;
-        }
-        
-        #first {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #second {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #third {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #fourth {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-    </style>
 </body>
 
 </html>
